@@ -2,6 +2,24 @@
 
 A very simple SQL server CLI tools just to ease the developer working on Mac or Linux.
 
+# Dependency
+
+Install freetds using the package manager of your system.
+## Mac
+```
+$homebrew install freetds
+```
+
+## Ubuntu
+```
+$sudo apt-get install freetds-dev
+```
+
+# Install
+```
+$gem install itds
+```
+
 # Usage
 
 Help

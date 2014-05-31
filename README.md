@@ -1,6 +1,6 @@
 # Itds
 
-A very simple SQL server CLI tools just to ease the developer working on Mac or Linux.
+A deadly simple SQL server CLI tools just to ease the developer working on Mac or Linux.
 
 # Dependency
 
@@ -29,7 +29,7 @@ $itds --help
 
 Command parameters:
 ```
-$itds -h <hostname> -P <password> -u <username> -d <contained_database> [SQL]
+$itds -h <hostname> -p <password> -u <username> -d <contained_database> [SQL]
 ```
 
 Execute a command
@@ -42,15 +42,17 @@ $itds -h <hostname> -d <database> select 1
 +---+
 ```
 
-Interactive mode
+Cancel a request in interactive mode.
 ```
 $itds -h <hostname> -d <mydb>
-mydb> select(1)
-+---+
-
-+---+
-| 1 |
-+---+
-mydb> exit
+mydb> waitfor delay '00:00:04'
+^C
+mydb> select * from test
++----+
+| id |
++----+
+| 10 |
++----+
+mydb> ^C
 $
 ```

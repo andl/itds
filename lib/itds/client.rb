@@ -8,15 +8,21 @@ module Itds
     def_delegators :@backend, :close
 
     DEFAULT_OPTS = {
-      port: 1433,
+      port:     1433,
       username: 'sa',
+      timeout:  5,
     }
 
     def initialize(opts={})
       opts = DEFAULT_OPTS.merge(opts)
       opts[:azure] = true if(opts[:database])
+      opts[:login_timeout] = opts[:timeout]
 
-      @backend = TinyTds::Client.new(opts)
+      @backend = new_backend(opts)
+    end
+
+    def new_backend(opts)
+      TinyTds::Client.new(opts)
     end
 
     def execute(sql)

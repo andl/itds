@@ -1,0 +1,13 @@
+language: ruby
+
+rvm:
+  - 1.9.3-p547
+  - 2.0.0
+
+before_install:
+  - sudo apt-get update -qq
+  - sudo apt-get install -qq freetds-dev
+  - bundle install
+
+script:
+  - bundle exec rake spec

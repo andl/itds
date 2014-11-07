@@ -14,8 +14,8 @@ module Itds
         )
       end
 
-      sleep(timeout + 1)
-      t.alive?.should be_false
+      sleep(timeout + 2)
+      expect(t.alive?).to eq(false)
     end
   end
 end

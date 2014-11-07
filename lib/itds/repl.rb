@@ -127,7 +127,7 @@ EOT
         end
 
         opts.on("--timeout [TIMEOUT]", "connect and query timeout, 5 secs by default") do |t|
-          options[:timeout] = t
+          options[:timeout] = t.to_i
         end
 
         opts.on_tail("--help", "show this help message") do

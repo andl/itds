@@ -1,4 +1,4 @@
-# Itds [![CI] (https://travis-ci.org/andl/itds.svg?branch=master)] (https://travis-ci.org/andl/itds)
+# Itds [![Build Status](https://travis-ci.org/andl/itds.svg?branch=master)](https://travis-ci.org/andl/itds)
 
 A deadly simple SQL server CLI tools just to ease the developer working on Mac or Linux.
 
